@@ -1,5 +1,8 @@
 This file contains people who have helped xgoogle project:
 
+	 * Nikola Milosevic
+      Thanks for adding:
+		  * Face image search
     * Holger Berndt
       Thanks for adding:
        * 'lang' and 'tld' arguments to Google Search

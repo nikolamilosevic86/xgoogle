@@ -1,7 +1,10 @@
-This is a Google library called 'xgoogle'. Current version is 1.3.
+This is a fork of a Google library called 'xgoogle'. Current version is 1.3.1
 
-It's written by Peteris Krumins (peter@catonmat.net).
-His blog is at http://www.catonmat.net  --  good coders code, great reuse.
+It is forked by Nikola Milosevic (nikola.milosevic@inspiratron.org) from the original code that was written by Peteris Krumins (peter@catonmat.net).
+Peteris Krumins blog is at http://www.catonmat.net  --  good coders code, great reuse.
+Nikola Milosevic's blog is at http://www.inspiratron.org.
+
+This fork adds Google face image search, and hopefully in the future Google image search
 
 The code is licensed under MIT license.
 
