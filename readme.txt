@@ -190,13 +190,11 @@ v1.1:  * added Google Sponsored Links Search.
 v1.2:  * added Google Sets module
 v1.3:  * added Google Translate module
        * fixed a bug in browser.py when KeyboardInterrupt did not get propagated.
+v1.3:  * added Google Face image search
 
 --------------------------------------------------------------------------
 
 That's it. Have fun! :)
 
 
-Sincerely,
-Peteris Krumins
-http://www.catonmat.net
 
