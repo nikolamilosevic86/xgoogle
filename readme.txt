@@ -1,4 +1,4 @@
-This is a fork of a Google library called 'xgoogle'. Current version is 1.3.1
+This is a fork of a Google library called 'xgoogle'. Current version is 1.4
 
 It is forked by Nikola Milosevic (nikola.milosevic@inspiratron.org) from the original code that was written by Peteris Krumins (peter@catonmat.net).
 Peteris Krumins blog is at http://www.catonmat.net  --  good coders code, great reuse.
@@ -190,7 +190,7 @@ v1.1:  * added Google Sponsored Links Search.
 v1.2:  * added Google Sets module
 v1.3:  * added Google Translate module
        * fixed a bug in browser.py when KeyboardInterrupt did not get propagated.
-v1.3:  * added Google Face image search
+v1.4:  * added Google image and face image search
 
 --------------------------------------------------------------------------
 
