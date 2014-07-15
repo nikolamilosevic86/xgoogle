@@ -191,6 +191,7 @@ v1.2:  * added Google Sets module
 v1.3:  * added Google Translate module
        * fixed a bug in browser.py when KeyboardInterrupt did not get propagated.
 v1.4:  * added Google image and face image search
+	   * added Google video search (requires NLTK, for install instruction see http://www.nltk.org/install.html)
 
 --------------------------------------------------------------------------
 
