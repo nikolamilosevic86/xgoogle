@@ -507,9 +507,7 @@ class GoogleVideoSearch(object):
         return {'from': int(matches.group(1)), 'to': int(matches.group(2)), 'total': int(matches.group(3))}
 
     def _extract_results(self, soup):
-        # Should extract <a href="/url?q=
         results = soup.findAll('li', {"class" : re.compile(r'\b(g videobox|g)\b')})
-        #results = soup.findAll('img')
         ret_res = []
         for result in results:
             eres = self._extract_result(result)
