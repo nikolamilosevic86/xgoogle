@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import sys
 
-__version__ = '1.3'
+__version__ = '1.4'
 
 import os
 def _read(fname):
@@ -14,8 +14,8 @@ setup(
     long_description=_read('readme.txt'),
     classifiers=[],
     keywords='google search',
-    author='Peteris Krumins',
-    author_email='peter@catonmat.net',
+    author='Peteris Krumins, Nikola Milosevic',
+    author_email='nikola.milosevic@inspiratron.org',
     url='http://github.com/pkrumins/xgoogle',
     license='MIT',
     packages=find_packages(exclude=['ez_setup', 'examples', 'tests']),
@@ -25,6 +25,7 @@ setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=[
+                       'nltk==2.0.4'
         # -*- Extra requirements: -*-
     ],
 )
