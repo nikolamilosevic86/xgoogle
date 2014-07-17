@@ -5,7 +5,7 @@
 
 from xgoogle.search import GoogleFaceImageSearch, SearchError
 try:
-    gs = GoogleFaceImageSearch("quick and dirty")
+    gs = GoogleFaceImageSearch("Eddard Stark")
     gs.results_per_page = 50
     results = gs.get_results()
     for res in results:
