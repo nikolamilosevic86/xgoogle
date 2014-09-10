@@ -73,10 +73,11 @@ class FaceImageSearchResult:
         return 'Google Search Result: "%s"' % self.trumb
 
 class SearchResult:
-    def __init__(self, title, url, desc):
+    def __init__(self, title, url, desc,excerpt):
         self.title = title
         self.url = url
         self.desc = desc
+        self.excerpt = excerpt
 
     def __str__(self):
         return 'Google Search Result: "%s"' % self.title
@@ -269,9 +270,12 @@ class GoogleSearch(object):
     def _extract_result(self, result):
         title, url = self._extract_title_url(result)
         desc = self._extract_description(result)
-        if not title or not url or not desc:
+        if desc == None:
+            desc = ''
+        excerpt = self._extract_excerpt(result)
+        if not title or not url or not (desc or excerpt):
             return None
-        return SearchResult(title, url, desc)
+        return SearchResult(title, url, desc,excerpt)
 
     def _extract_title_url(self, result):
         #title_a = result.find('a', {'class': re.compile(r'\bl\b')})
@@ -286,6 +290,30 @@ class GoogleSearch(object):
         if match:
             url = urllib.unquote(match.group(1))
         return title, url
+    
+    def _extract_excerpt(self, result):
+        def looper(tag):
+            if not tag: return
+            for t in tag:
+                try:
+                    if t.name == 'br': pass
+                except AttributeError:
+                    pass
+                    try:
+                        desc_strs.append(t.string)
+                    except AttributeError:
+                        desc_strs.append(t)
+        desc_div = result.find('span', {'class': re.compile(r'\bst\b')})
+        if not desc_div:
+            self._maybe_raise(ParseError, "Content excerpt tag in Google search result was not found", result)
+            return None
+        desc_strs = []
+
+        looper(desc_div)
+        looper(desc_div.find('wbr')) # BeautifulSoup does not self-close <wbr>
+
+        desc = ''.join(s for s in desc_strs if s)
+        return self._html_unescape(desc)
 
     def _extract_description(self, result):
         desc_div = result.find('div', {'class': re.compile(r'\bs\b')})

@@ -14,8 +14,7 @@ try:
         print 'Date: ' + res.date.encode('utf8')
         print 'Duration: ' + res.duration.encode('utf8')
         print 'Author: ' + res.author.encode('utf8')
-        print 'Description: ' + res.description.encode('utf8')
-        
+        print 'Description: ' + res.description.encode('utf8')        
         print
 except SearchError, e:
     print "Search failed: %s" % e
